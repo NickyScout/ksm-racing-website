@@ -4,6 +4,23 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (gallery sideways scroll)
+**Files changed:**
+- `Codes/personal-site.html`
+- `Codes/personal-style.css`
+
+**What was changed:**
+- Turned the Racing Moments gallery into a sideways (horizontal) scroller so the
+  photos slide left and right instead of stacking below each other.
+- Added left and right red arrow buttons that scroll the gallery.
+- Added a small script (`scrollGallery`) so the arrows scroll the row smoothly.
+
+**Why it was changed:**
+- Requested: the walking photo (and the others) should scroll sideways with an
+  arrow instead of stacking.
+
+---
+
 ## 2026-06-23 (new gallery photos)
 **Files changed:**
 - `Codes/personal-site.html`

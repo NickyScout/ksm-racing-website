@@ -242,26 +242,32 @@
       <p class="section-label">Gallery</p>
       <h2>Racing Moments</h2>
 
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img class="photo-top" src="../Images/number-one.jpg" alt="Kseniia showing number one with visor down">
+      <div class="gallery-scroller">
+        <button class="gallery-arrow gallery-arrow-left" type="button" aria-label="Scroll left" onclick="scrollGallery(-1)">&#10094;</button>
+
+        <div class="gallery-grid" id="galleryTrack">
+          <div class="gallery-item">
+            <img class="photo-top" src="../Images/number-one.jpg" alt="Kseniia showing number one with visor down">
+          </div>
+
+          <div class="gallery-item">
+            <img class="photo-center" src="../Images/on-track.jpg" alt="Kseniia racing on track">
+          </div>
+
+          <div class="gallery-item">
+            <img class="photo-center" src="../Images/helmet-profile.jpg" alt="Side profile in a helmet with open visor">
+          </div>
+
+          <div class="gallery-item">
+            <img class="photo-center" src="../Images/on-track2.jpg" alt="Kseniia racing on track">
+          </div>
+
+          <div class="gallery-item">
+            <img class="photo-center" src="../Images/walking-away.jpg" alt="Kseniia walking away in racing suit with dark clouds overhead">
+          </div>
         </div>
 
-        <div class="gallery-item">
-          <img class="photo-center" src="../Images/on-track.jpg" alt="Kseniia racing on track">
-        </div>
-
-        <div class="gallery-item">
-          <img class="photo-center" src="../Images/helmet-profile.jpg" alt="Side profile in a helmet with open visor">
-        </div>
-
-        <div class="gallery-item">
-          <img class="photo-center" src="../Images/on-track2.jpg" alt="Kseniia racing on track">
-        </div>
-
-        <div class="gallery-item">
-          <img class="photo-center" src="../Images/walking-away.jpg" alt="Kseniia walking away in racing suit with dark clouds overhead">
-        </div>
+        <button class="gallery-arrow gallery-arrow-right" type="button" aria-label="Scroll right" onclick="scrollGallery(1)">&#10095;</button>
       </div>
     </section>
 
@@ -337,6 +343,13 @@
   <footer>
     <p>© 2026 Kseniia Miliaeva Racing Profile</p>
   </footer>
+
+  <script>
+    function scrollGallery(direction) {
+      var track = document.getElementById("galleryTrack");
+      track.scrollBy({ left: direction * 320, behavior: "smooth" });
+    }
+  </script>
 
 </body>
 </html>
