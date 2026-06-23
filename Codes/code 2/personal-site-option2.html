@@ -42,7 +42,7 @@
       </div>
 
       <div class="hero-panel">
-        <img src="../../Images/helmet-profile.jpg" alt="Kseniia wearing a racing helmet">
+        <img src="Images - Copy/tyre-perspective.jpg" alt="Kseniia sitting in a kart from tyre perspective">
         <div class="panel-label">
           <span>KSM</span>
           <p>Driver profile 2026</p>
@@ -77,34 +77,52 @@
 
     <section id="story" class="story-section">
       <div class="story-image">
-        <img src="../../Images/child-kart.jpg" alt="Kseniia in a go kart as a child">
+        <img src="Images - Copy/child-kart.jpg" alt="Kseniia in a go kart as a child">
       </div>
 
       <div class="story-text">
         <p class="section-label">My Story</p>
         <h2>From a slow first time to wanting more.</h2>
 
+        <div class="story-motto">
+          <p>"Every session gives me something to learn."</p>
+        </div>
+
         <p>
           My dad first brought me to karting when I was younger. Later, watching Formula 1
-          helped me see racing as something I wanted to try more seriously myself.
+          helped me see racing as something I wanted to try <span class="highlight">more seriously</span> myself.
         </p>
 
         <p>
           One of my earliest karting memories is setting a lap time that was much slower
-          than I wanted. Instead of putting me off, it made me want to understand how to
-          improve. That moment is one of the reasons I enjoy karting: every session gives
-          me something to learn.
+          than I wanted. Instead of putting me off, it made me want to <span class="highlight">understand how to improve</span>. That moment is one of the reasons I enjoy karting: <span class="highlight">every session gives me something to learn</span>.
         </p>
 
         <p>
-          Outside racing, I would describe myself as organised, hard-working and friendly.
+          Outside racing, I would describe myself as <span class="highlight">organised, hard-working and friendly</span>.
           I like being part of a community, learning from mistakes and improving step by step.
         </p>
 
         <p>
-          Racing has taught me patience, persistence and focus, especially when building
+          Racing has taught me <span class="highlight">patience, persistence and focus</span>, especially when building
           confidence in traffic and becoming bolder with overtaking in close fights.
         </p>
+
+        <div class="story-stats">
+          <h4>Racing Journey</h4>
+          <div class="stat-item">
+            <span class="stat-value">15</span>
+            <span class="stat-label">Years old</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">ARA</span>
+            <span class="stat-label">Academy Driver</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">4+</span>
+            <span class="stat-label">Endurance Events</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -169,7 +187,7 @@
         </div>
 
         <div class="track-highlight">
-          <span>31.8s</span>
+          <span data-target="31.8" data-suffix="s" class="counter">0s</span>
           <p>Best lap at TeamSport Reading, with improvement work continuing week by week.</p>
         </div>
       </div>
@@ -208,31 +226,41 @@
         <h2>Racing moments</h2>
       </div>
 
-      <div class="gallery-layout">
-        <figure class="gallery-large">
-          <img src="../../Images/tyre-perspective.jpg" alt="Kseniia sitting in a kart from tyre perspective">
-          <figcaption>Focused before the drive</figcaption>
+      <div class="gallery-shell">
+        <button class="gallery-arrow gallery-arrow-left" type="button" aria-label="Previous racing photo">&#10094;</button>
+
+        <div class="gallery-layout" id="gallery-track">
+        <figure>
+          <img src="Images - Copy/helmet-profile.jpg" alt="Kseniia wearing a racing helmet">
         </figure>
 
         <figure>
-          <img src="../../Images/number-one.jpg" alt="Kseniia showing number one with visor down">
-          <figcaption>Ready to race</figcaption>
+          <img src="Images - Copy/number-one.jpg" alt="Kseniia showing number one with visor down">
         </figure>
 
         <figure>
-          <img src="../../Images/driving.jpg" alt="Kseniia driving a kart">
-          <figcaption>On track</figcaption>
+          <img src="Images - Copy/driving.jpg" alt="Kseniia driving a kart">
         </figure>
 
         <figure>
-          <img src="../../Images/walking-away.jpg" alt="Kseniia walking away in racing suit">
-          <figcaption>Looking ahead</figcaption>
+          <img src="Images - Copy/focused-kart.jpg" alt="Kseniia focused in a kart before racing">
         </figure>
 
         <figure>
-          <img src="../../Images/standing.jpg" alt="Kseniia standing in racing gear">
-          <figcaption>Driver profile</figcaption>
+          <img src="Images - Copy/standing.jpg" alt="Kseniia standing in racing gear">
         </figure>
+
+        <figure>
+          <img src="Images - Copy/racing3.jpg" alt="Kseniia racing on track">
+        </figure>
+
+        <figure>
+          <img src="Images - Copy/on-track2.jpg" alt="Kseniia racing on track in another moment">
+        </figure>
+
+        </div>
+
+        <button class="gallery-arrow gallery-arrow-right" type="button" aria-label="Next racing photo">&#10095;</button>
       </div>
     </section>
 
@@ -253,8 +281,7 @@
         </p>
 
         <p>
-          For racing opportunities and sponsor enquiries, please contact me through my
-          social media pages.
+          For racing opportunities and sponsor enquiries, please use the contact form in the section below or reach out directly via email and social media.
         </p>
 
         <div class="social-links sponsor-socials">
@@ -275,11 +302,145 @@
       </div>
     </section>
 
+    <section id="contact" class="contact-section">
+      <div class="section-heading">
+        <p class="section-label">Get in touch</p>
+        <h2>Let's connect</h2>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <p>Are you a sponsor, team, or racing organization interested in partnering? I'd love to connect:</p>
+          <a href="mailto:miliaevak@outlook.com" class="email-link">miliaevak@outlook.com</a>
+          
+          <div class="contact-social">
+            <p>You can also find me on:</p>
+            <div class="social-links">
+              <a href="https://www.instagram.com/ksm.racing23?igsh=eDhnaWV0NGVzeXE%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://vt.tiktok.com/ZSCd4XSRf/" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/mlderzyv" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-red">Send Message</button>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <footer>
     <p>© 2026 Kseniia Miliaeva | KSM Racing</p>
   </footer>
+
+  <script>
+    const galleryTrack = document.getElementById("gallery-track");
+    const prevArrow = document.querySelector(".gallery-arrow-left");
+    const nextArrow = document.querySelector(".gallery-arrow-right");
+
+    function scrollGallery(direction) {
+      if (!galleryTrack) {
+        return;
+      }
+
+      const card = galleryTrack.querySelector("figure");
+      const cardWidth = card ? card.offsetWidth : 320;
+      const gap = 18;
+      galleryTrack.scrollBy({
+        left: direction * (cardWidth + gap),
+        behavior: "smooth"
+      });
+    }
+
+    if (prevArrow) {
+      prevArrow.addEventListener("click", () => scrollGallery(-1));
+    }
+
+    if (nextArrow) {
+      nextArrow.addEventListener("click", () => scrollGallery(1));
+    }
+
+    // Sticky navigation active link highlighting
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section[id]');
+
+    window.addEventListener('scroll', () => {
+      let currentSection = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.scrollY >= sectionTop) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSection) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Lap time counter animation on tracks section
+    const tracksSection = document.getElementById('tracks');
+    let tracksAnimated = false;
+
+    const tracksObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !tracksAnimated) {
+        tracksAnimated = true;
+        animateCounter();
+      }
+    }, { threshold: 0.5 });
+
+    if (tracksSection) {
+      tracksObserver.observe(tracksSection);
+    }
+
+    function animateCounter() {
+      const counter = document.querySelector('.counter');
+      if (!counter) return;
+
+      const target = parseFloat(counter.dataset.target);
+      const suffix = counter.dataset.suffix || '';
+      const duration = 2000; // 2 seconds
+      const start = Date.now();
+
+      const animate = () => {
+        const elapsed = Date.now() - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const current = (target * progress).toFixed(1);
+        counter.textContent = current + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      animate();
+    }
+  </script>
 
 </body>
 </html>

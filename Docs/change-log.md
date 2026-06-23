@@ -4,6 +4,20 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (removed on-track photos)
+**Files changed:**
+- `Codes/personal-site.html`
+
+**What was changed:**
+- Removed the two on-track photos (`on-track.jpg`, `on-track2.jpg`) from the
+  Racing Moments gallery. Their image files were no longer in the Images folder,
+  so they were showing as broken.
+
+**Why it was changed:**
+- Requested removal; also fixes the broken image links.
+
+---
+
 ## 2026-06-23 (removed sponsor logo placeholders)
 **Files changed:**
 - `Codes/personal-site.html`

@@ -16,9 +16,10 @@ img {
 .hero {
   min-height: 100vh;
   padding: 26px 8%;
+  padding-top: 120px;
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.74), rgba(70, 0, 0, 0.55)),
-    url("../../Images/walking-away.jpg");
+    url("Images - Copy/racing3.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -44,6 +45,17 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 26px 8%;
+  background-color: rgba(7, 7, 7, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
 }
 
 .logo {
@@ -60,9 +72,11 @@ img {
   text-decoration: none;
   margin-left: 22px;
   font-size: 15px;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: #ff2b2b;
 }
 
@@ -109,6 +123,11 @@ h1 {
   margin-right: 12px;
   text-decoration: none;
   font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
 }
 
 .btn-red {
@@ -207,6 +226,7 @@ h1 {
   color: #e10600;
   font-size: 38px;
   font-weight: bold;
+  min-height: 50px;
 }
 
 .stats-band p {
@@ -219,7 +239,8 @@ h1 {
 .driver-section,
 .tracks-section,
 .gallery-section,
-.sponsor-section {
+.sponsor-section,
+.contact-section {
   padding: 90px 8%;
 }
 
@@ -244,6 +265,67 @@ h1 {
   object-fit: cover;
   object-position: center;
   display: block;
+}
+
+.highlight {
+  color: #e10600;
+  font-weight: bold;
+}
+
+.story-motto {
+  background-color: rgba(225, 6, 0, 0.1);
+  border-left: 5px solid #e10600;
+  padding: 18px 20px;
+  margin: 24px 0 32px;
+  border-radius: 8px;
+}
+
+.story-motto p {
+  margin: 0;
+  font-size: 20px;
+  font-style: italic;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.story-stats {
+  background-color: rgba(225, 6, 0, 0.08);
+  border: 1px solid rgba(225, 6, 0, 0.3);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 32px;
+}
+
+.story-stats h4 {
+  margin: 0 0 18px;
+  color: #e10600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.stat-item:last-child {
+  margin-bottom: 0;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e10600;
+  min-width: 50px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #bbbbbb;
+  margin-left: 12px;
 }
 
 h2 {
@@ -382,10 +464,17 @@ p {
   background-color: #080808;
 }
 
+.gallery-shell {
+  position: relative;
+}
+
 .gallery-layout {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr 1fr;
+  display: flex;
   gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 12px;
+  scrollbar-width: none;
 }
 
 figure {
@@ -394,11 +483,13 @@ figure {
   border-radius: 22px;
   overflow: hidden;
   border: 1px solid #292929;
+  flex: 0 0 min(420px, 85vw);
+  scroll-snap-align: start;
 }
 
 figure img {
   width: 100%;
-  height: 260px;
+  height: 320px;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -409,24 +500,49 @@ figure:hover img {
   transform: scale(1.04);
 }
 
-.gallery-large {
-  grid-row: span 2;
-}
-
-.gallery-large img {
-  height: 560px;
-}
-
 figcaption {
   padding: 14px 16px;
   font-size: 15px;
   color: #eeeeee;
 }
 
+.gallery-layout::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 999px;
+  background-color: rgba(225, 6, 0, 0.92);
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.gallery-arrow:hover {
+  background-color: #ff2b2b;
+}
+
+.gallery-arrow-left {
+  left: -10px;
+}
+
+.gallery-arrow-right {
+  right: -10px;
+}
+
 .sponsor-section {
   background:
     linear-gradient(135deg, rgba(7, 7, 7, 0.96), rgba(55, 0, 0, 0.92)),
-    url("../../Images/driving.jpg");
+    url("Images - Copy/driving.jpg");
   background-size: cover;
   background-position: center;
   display: grid;
@@ -462,6 +578,105 @@ figcaption {
   margin-bottom: 12px;
 }
 
+.contact-section {
+  background-color: #0d0d0d;
+  padding: 90px 8%;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  color: #e8e8e8;
+}
+
+.contact-info p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.email-link {
+  display: inline-block;
+  font-size: 26px;
+  font-weight: bold;
+  color: #e10600;
+  text-decoration: none;
+  margin-bottom: 28px;
+  border-bottom: 2px solid #e10600;
+  padding-bottom: 6px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.email-link:hover {
+  color: #ff2b2b;
+  border-color: #ff2b2b;
+}
+
+.contact-social {
+  margin-top: 28px;
+}
+
+.contact-social p {
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+
+.contact-form {
+  background-color: #161616;
+  border-left: 6px solid #e10600;
+  border-radius: 16px;
+  padding: 36px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #2d2d2d;
+  border-radius: 8px;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #e10600;
+  box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.contact-form .btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+}
+
 footer {
   text-align: center;
   padding: 26px;
@@ -474,7 +689,8 @@ footer {
   .story-section,
   .driver-layout,
   .track-feature,
-  .sponsor-section {
+  .sponsor-section,
+  .contact-container {
     grid-template-columns: 1fr;
   }
 
@@ -484,14 +700,25 @@ footer {
   }
 
   .gallery-layout {
-    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 
-  .gallery-large {
-    grid-row: auto;
+  .gallery-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
   }
 
-  .gallery-large img,
+  .gallery-arrow-left {
+    left: -6px;
+  }
+
+  .gallery-arrow-right {
+    right: -6px;
+  }
+
   figure img,
   .story-image img,
   .hero-panel img {
