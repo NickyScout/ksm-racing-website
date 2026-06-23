@@ -4,6 +4,26 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (contact form and email)
+**Files changed:**
+- `Codes/personal-site.html`
+- `Codes/personal-style.css`
+
+**What was changed:**
+- Added a new **Contact** section with a working contact form (Name, Email,
+  Message) and an "Email me" button.
+- The form is powered by FormSubmit.co and sends messages to
+  `miliaevak@outlook.com` (no backend needed).
+- Added a "Contact" link to the top navigation.
+
+**Why it was changed:**
+- To let teams and sponsors contact the driver directly from the website.
+
+**Note:** FormSubmit sends a one-time activation email the first time the form is
+used. The owner must click the link in that email once to start receiving messages.
+
+---
+
 ## 2026-06-23 (gallery sideways scroll)
 **Files changed:**
 - `Codes/personal-site.html`

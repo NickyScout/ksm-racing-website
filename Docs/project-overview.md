@@ -24,4 +24,5 @@ with other people.
 5. **Gallery** – racing photos.
 6. **Goals** – what she wants to achieve next.
 7. **Sponsors** – information for sponsors and the racing community.
-8. **Footer** – copyright line.
+8. **Contact** – a contact form and email button for teams and sponsors.
+9. **Footer** – copyright line.

@@ -556,6 +556,67 @@ p {
   line-height: 1.5;
 }
 
+.contact-section {
+  background-color: #0d0d0d;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.contact-text p {
+  max-width: 640px;
+}
+
+.contact-text .button {
+  margin-top: 10px;
+}
+
+.contact-form {
+  background-color: #161616;
+  border: 1px solid #2a2a2a;
+  border-radius: 22px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 14px 0 6px;
+  color: #f5f5f5;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #0d0d0d;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #f5f5f5;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #e10600;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 22px;
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 footer {
   text-align: center;
   padding: 25px;
@@ -592,7 +653,8 @@ footer {
   .two-column,
   .goals-section,
   .driver-feature,
-  .sponsor-section {
+  .sponsor-section,
+  .contact-section {
     grid-template-columns: 1fr;
   }
 
