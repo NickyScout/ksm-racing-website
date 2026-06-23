@@ -4,6 +4,19 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (published to GitHub)
+**What was changed:**
+- Installed Git and GitHub CLI.
+- Created a git repository, added a `.gitignore` file, and made the first commit.
+- Published the project as a new **public** repository on GitHub:
+  `https://github.com/NickyScout/ksm-racing-website` (branch `main`).
+
+**Why it was changed:**
+- To put the project online and back it up on GitHub so it can be shared and
+  updated easily.
+
+---
+
 ## 2026-06-23
 **Files changed:**
 - `Codes/personal-site.html`
