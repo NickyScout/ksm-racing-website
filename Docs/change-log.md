@@ -4,6 +4,22 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (thank-you message after sending)
+**Files changed:**
+- `Codes/personal-site.html`
+- `Codes/personal-style.css`
+
+**What was changed:**
+- After the contact form is sent, the form is hidden and a "Thank you!" message
+  appears on the same page (no page reload).
+- The form now submits through the FormSubmit AJAX endpoint so the thank-you can
+  show instantly. If JavaScript is off, the normal form still works as a fallback.
+
+**Why it was changed:**
+- To confirm to the visitor that their message was sent successfully.
+
+---
+
 ## 2026-06-23 (contact form and email)
 **Files changed:**
 - `Codes/personal-site.html`

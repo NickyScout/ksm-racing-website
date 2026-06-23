@@ -617,6 +617,19 @@ p {
   font-size: 16px;
 }
 
+.contact-thanks {
+  background-color: #161616;
+  border: 1px solid #2a2a2a;
+  border-left: 6px solid #e10600;
+  border-radius: 22px;
+  padding: 28px;
+}
+
+.contact-thanks h3 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
 footer {
   text-align: center;
   padding: 25px;

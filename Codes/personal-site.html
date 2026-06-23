@@ -357,7 +357,7 @@
         </div>
       </div>
 
-      <form class="contact-form" action="https://formsubmit.co/miliaevak@outlook.com" method="POST">
+      <form id="contactForm" class="contact-form" action="https://formsubmit.co/miliaevak@outlook.com" method="POST">
         <input type="hidden" name="_subject" value="New message from KSM Racing website">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
@@ -374,6 +374,11 @@
 
         <button type="submit" class="button primary-button">Send message</button>
       </form>
+
+      <div id="contactThanks" class="contact-thanks" style="display:none">
+        <h3>Thank you!</h3>
+        <p>Your message has been sent. I will get back to you as soon as I can.</p>
+      </div>
     </section>
 
   </main>
@@ -386,6 +391,27 @@
     function scrollGallery(direction) {
       var track = document.getElementById("galleryTrack");
       track.scrollBy({ left: direction * 320, behavior: "smooth" });
+    }
+
+    var contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+      contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var formData = new FormData(contactForm);
+        fetch("https://formsubmit.co/ajax/miliaevak@outlook.com", {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: formData
+        })
+          .then(function (response) { return response.json(); })
+          .then(function () {
+            contactForm.style.display = "none";
+            document.getElementById("contactThanks").style.display = "block";
+          })
+          .catch(function () {
+            alert("Sorry, something went wrong. Please email me directly at miliaevak@outlook.com");
+          });
+      });
     }
   </script>
 
