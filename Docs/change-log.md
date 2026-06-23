@@ -4,6 +4,24 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (gallery re-framed and rearranged)
+**Files changed:**
+- `Codes/personal-site.html`
+- `Codes/personal-style.css`
+
+**What was changed:**
+- Rearranged the Racing Moments gallery into equal, portrait-shaped cards
+  (no more large/wide mosaic tiles).
+- Each card now uses a 4:5 aspect ratio with `object-fit: cover`, so vertical
+  photos fill the card nicely without big empty borders and without heavy cropping.
+- The grid is responsive (`auto-fit`), so cards reflow on smaller screens.
+
+**Why it was changed:**
+- `contain` made the photos look too zoomed out; this format frames the photos
+  better and keeps the layout tidy.
+
+---
+
 ## 2026-06-23 (gallery shows full photos)
 **Files changed:**
 - `Codes/personal-style.css`
