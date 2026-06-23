@@ -4,6 +4,24 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (restored on-track2 photo)
+**Files changed:**
+- `Codes/personal-site.html`
+- Moved `on-track2.jpg` from the project root into the `Images` folder.
+
+**What was changed:**
+- Put the `on-track2.jpg` photo back into the Racing Moments gallery.
+- The file was in the wrong place (project root), so it was moved into `Images`
+  so the gallery path works.
+
+**Why it was changed:**
+- Requested to put the on-track photo back.
+
+**Note:** `on-track.jpg` (without the "2") is still missing from the project, so it
+was not restored. Add that file to `Images` if you want it back too.
+
+---
+
 ## 2026-06-23 (removed on-track photos)
 **Files changed:**
 - `Codes/personal-site.html`

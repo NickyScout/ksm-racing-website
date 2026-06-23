@@ -267,67 +267,6 @@ h1 {
   display: block;
 }
 
-.highlight {
-  color: #e10600;
-  font-weight: bold;
-}
-
-.story-motto {
-  background-color: rgba(225, 6, 0, 0.1);
-  border-left: 5px solid #e10600;
-  padding: 18px 20px;
-  margin: 24px 0 32px;
-  border-radius: 8px;
-}
-
-.story-motto p {
-  margin: 0;
-  font-size: 20px;
-  font-style: italic;
-  color: #ffffff;
-  font-weight: 500;
-}
-
-.story-stats {
-  background-color: rgba(225, 6, 0, 0.08);
-  border: 1px solid rgba(225, 6, 0, 0.3);
-  border-radius: 12px;
-  padding: 24px;
-  margin-top: 32px;
-}
-
-.story-stats h4 {
-  margin: 0 0 18px;
-  color: #e10600;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-
-.stat-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 14px;
-}
-
-.stat-item:last-child {
-  margin-bottom: 0;
-}
-
-.stat-value {
-  font-size: 24px;
-  font-weight: bold;
-  color: #e10600;
-  min-width: 50px;
-}
-
-.stat-label {
-  font-size: 14px;
-  color: #bbbbbb;
-  margin-left: 12px;
-}
-
 h2 {
   font-size: 46px;
   line-height: 1.05;
