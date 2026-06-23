@@ -4,6 +4,21 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (new gallery photos)
+**Files changed:**
+- `Codes/personal-site.html`
+
+**What was changed:**
+- Added two new photos to the Racing Moments gallery: `on-track.jpg` and
+  `on-track2.jpg`.
+- Removed the tyre-perspective photo (`tyre-perspective.jpg`) from the gallery.
+
+**Why it was changed:**
+- New on-track photos were added to the `Images` folder and requested for the
+  gallery; the tyre-perspective photo was no longer wanted there.
+
+---
+
 ## 2026-06-23 (gallery re-framed and rearranged)
 **Files changed:**
 - `Codes/personal-site.html`
