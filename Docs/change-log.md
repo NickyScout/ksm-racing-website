@@ -4,6 +4,21 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (gallery cleanup)
+**Files changed:**
+- `Codes/personal-site.html`
+
+**What was changed:**
+- Removed the child karting photo (`child-kart.jpg`) from the Racing Moments gallery.
+- Removed the "on track" photo (`driving.jpg`) from the gallery.
+- Reframed the remaining gallery photos with `object-position: top` (class
+  `photo-top`) so heads are no longer cropped off.
+
+**Why it was changed:**
+- To keep only the preferred photos and make sure faces/heads show properly.
+
+---
+
 ## 2026-06-23 (published to GitHub)
 **What was changed:**
 - Installed Git and GitHub CLI.
