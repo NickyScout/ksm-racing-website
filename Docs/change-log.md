@@ -4,6 +4,20 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (sponsor logo placeholders)
+**Files changed:**
+- `Codes/personal-site.html`
+- `Codes/personal-style.css`
+
+**What was changed:**
+- Added a "Supported by" strip in the Sponsors section with five placeholder
+  logo slots that say "Your logo here".
+
+**Why it was changed:**
+- To show sponsors there is ready-made space for their logo on the website.
+
+---
+
 ## 2026-06-23 (sponsors section wording)
 **Files changed:**
 - `Codes/personal-site.html`
