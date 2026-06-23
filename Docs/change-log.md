@@ -4,6 +4,20 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (gallery shows full photos)
+**Files changed:**
+- `Codes/personal-style.css`
+
+**What was changed:**
+- Changed the gallery images from `object-fit: cover` to `object-fit: contain`
+  so each photo shows fully instead of being heavily cropped.
+- The card background fills the empty space around each photo.
+
+**Why it was changed:**
+- The reframed photos were cropping too much and only showed half of the driver.
+
+---
+
 ## 2026-06-23 (gallery cleanup)
 **Files changed:**
 - `Codes/personal-site.html`
