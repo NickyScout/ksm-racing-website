@@ -428,6 +428,12 @@ p {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding-bottom: 12px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gallery-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .gallery-item {
