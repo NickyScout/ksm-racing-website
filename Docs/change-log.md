@@ -4,6 +4,21 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (sponsors section wording)
+**Files changed:**
+- `Codes/personal-site.html`
+
+**What was changed:**
+- Updated the Sponsors ("Open to opportunities") section so it no longer says
+  contact is only through social media. It now points to the contact form, email
+  and social media.
+- Added a "Get in touch" button that jumps to the Contact section.
+
+**Why it was changed:**
+- A contact form and email were added, so the wording needed to match.
+
+---
+
 ## 2026-06-23 (thank-you message after sending)
 **Files changed:**
 - `Codes/personal-site.html`
