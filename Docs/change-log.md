@@ -4,6 +4,19 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-23 (removed sponsor logo placeholders)
+**Files changed:**
+- `Codes/personal-site.html`
+- `Codes/personal-style.css`
+
+**What was changed:**
+- Removed the "Supported by" logo placeholder strip from the Sponsors section.
+
+**Why it was changed:**
+- It was not wanted after seeing it.
+
+---
+
 ## 2026-06-23 (sponsor logo placeholders)
 **Files changed:**
 - `Codes/personal-site.html`
