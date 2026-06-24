@@ -582,22 +582,47 @@
       }
     });
 
-    // On scroll: update URL and active nav link
-    window.addEventListener('scroll', () => {
+    function getCurrentSectionId() {
+      if (!sections.length) {
+        return '';
+      }
+
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const docBottom = scrollY + viewportHeight;
+      const pageBottom = document.documentElement.scrollHeight - 2;
+
+      // Keep the final section active when the user is near the page bottom.
+      if (docBottom >= pageBottom) {
+        return sections[sections.length - 1].getAttribute('id') || '';
+      }
+
+      const probeY = scrollY + viewportHeight * 0.35;
       let currentSection = '';
       sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 150) {
+        if (probeY >= section.offsetTop) {
           currentSection = section.getAttribute('id');
         }
       });
 
+      return currentSection;
+    }
+
+    function syncPathWithScroll() {
+      const currentSection = getCurrentSectionId();
       const newPath = sectionToPath[currentSection] || '/';
+
       if (newPath !== activePath) {
         activePath = newPath;
-        history.replaceState({}, '', newPath);
+        history.replaceState({}, '', newPath + (window.location.hash || ''));
         updateActiveNavLink(newPath);
       }
-    });
+    }
+
+    // On scroll: update URL and active nav link
+    window.addEventListener('scroll', syncPathWithScroll, { passive: true });
+    window.addEventListener('resize', syncPathWithScroll);
+    setTimeout(syncPathWithScroll, 220);
 
     // Hide past events automatically based on data-event-date (YYYY-MM-DD)
     const eventsSection = document.getElementById("events");
@@ -647,8 +672,7 @@
       }
 
       if (window.history.replaceState) {
-        const cleanUrl = window.location.href.split("#")[0].split("?")[0] + "#contact";
-        window.history.replaceState({}, document.title, cleanUrl);
+        window.history.replaceState({}, document.title, "/contact#contact");
       }
     }
 
