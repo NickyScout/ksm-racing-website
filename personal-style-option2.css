@@ -889,10 +889,10 @@ figcaption {
 
 .contact-container {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr;
   gap: 56px;
   align-items: start;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -903,6 +903,11 @@ figcaption {
   border-radius: 18px;
   padding: 30px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.contact-section > .contact-info {
+  max-width: 1200px;
+  margin: 0 auto 30px;
 }
 
 .contact-info p {
