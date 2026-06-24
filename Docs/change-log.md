@@ -4,6 +4,20 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-24 (removed My journey timeline)
+**Files changed:**
+- `Codes/personal-site.html`
+- `Codes/personal-style.css`
+
+**What was changed:**
+- Removed the "My journey so far" timeline from the About Me section, along with its
+  CSS.
+
+**Why it was changed:**
+- The timeline repeated the story already told in the paragraphs above it.
+
+---
+
 ## 2026-06-24 (About Me tone matched to the rest of the site)
 **Files changed:**
 - `Codes/personal-site.html`

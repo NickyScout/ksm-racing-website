@@ -305,50 +305,6 @@ p {
   color: #151515;
 }
 
-.story-timeline-wrap {
-  grid-column: 1 / -1;
-  margin-top: 40px;
-}
-
-.story-timeline-wrap h3 {
-  font-size: 24px;
-  margin-bottom: 24px;
-}
-
-.story-timeline {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
-}
-
-.timeline-step {
-  background-color: #f7f7f7;
-  border-radius: 16px;
-  padding: 20px;
-  border-top: 4px solid #e10600;
-}
-
-.step-num {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: bold;
-  color: #e10600;
-  margin-bottom: 8px;
-}
-
-.timeline-step h4 {
-  margin: 0 0 8px;
-  font-size: 17px;
-  color: #151515;
-}
-
-.timeline-step p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #444444;
-}
-
 .dark-section {
   background-color: #101010;
 }
@@ -759,8 +715,7 @@ footer {
   .profile-grid,
   .track-grid,
   .track-story-grid,
-  .experience-strip,
-  .story-timeline {
+  .experience-strip {
     grid-template-columns: 1fr 1fr;
   }
 
