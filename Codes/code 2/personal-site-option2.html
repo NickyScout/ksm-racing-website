@@ -169,7 +169,7 @@
         </div>
 
         <div class="track-highlight">
-          <span data-target="31.8" data-suffix="s" class="counter">0s</span>
+          <span>31.8s</span>
           <p>Best lap at TeamSport Reading, with improvement work continuing week by week.</p>
         </div>
       </div>
@@ -385,43 +385,6 @@
       });
     });
 
-    // Lap time counter animation on tracks section
-    const tracksSection = document.getElementById('tracks');
-    let tracksAnimated = false;
-
-    const tracksObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && !tracksAnimated) {
-        tracksAnimated = true;
-        animateCounter();
-      }
-    }, { threshold: 0.5 });
-
-    if (tracksSection) {
-      tracksObserver.observe(tracksSection);
-    }
-
-    function animateCounter() {
-      const counter = document.querySelector('.counter');
-      if (!counter) return;
-
-      const target = parseFloat(counter.dataset.target);
-      const suffix = counter.dataset.suffix || '';
-      const duration = 2000; // 2 seconds
-      const start = Date.now();
-
-      const animate = () => {
-        const elapsed = Date.now() - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const current = (target * progress).toFixed(1);
-        counter.textContent = current + suffix;
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      };
-
-      animate();
-    }
   </script>
 
 </body>

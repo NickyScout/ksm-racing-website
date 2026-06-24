@@ -4,6 +4,24 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-24 (My Story made more engaging)
+**Files changed:**
+- `Codes/personal-site.html`
+- `Codes/personal-style.css`
+
+**What was changed:**
+- Rewrote the My Story section to be more engaging: a strong opening line, a
+  pull quote, and short mini-blocks with subheadings (How it started, The turning
+  point, Off the track, What racing has taught me).
+- Added "fact chips" (age, academy, endurance, main track).
+- Added a "My journey so far" timeline with five steps.
+- All facts kept the same as before; only the wording and layout changed.
+
+**Why it was changed:**
+- The section read like a flat list and was not engaging to read.
+
+---
+
 ## 2026-06-23 (restored on-track2 photo)
 **Files changed:**
 - `Codes/personal-site.html`
