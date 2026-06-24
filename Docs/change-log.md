@@ -4,6 +4,19 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-24 (About Me tone matched to the rest of the site)
+**Files changed:**
+- `Codes/personal-site.html`
+
+**What was changed:**
+- Rewrote the About Me paragraphs with fuller, flowing sentences so the language and
+  tone match the other sections (Driver Profile, Tracks, Goals). Kept simple words.
+
+**Why it was changed:**
+- The sentences had become too short and did not match the rest of the website.
+
+---
+
 ## 2026-06-24 (About Me: simple words, formal style)
 **Files changed:**
 - `Codes/personal-site.html`
