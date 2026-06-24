@@ -9,6 +9,13 @@ driver. It shares her story, racing experience, the tracks she races at, a photo
 gallery and information for possible sponsors. It is built with plain **HTML** and
 **CSS** as a beginner learning project.
 
+## Live website
+The site is published on **Azure Static Web Apps**:
+https://brave-bay-0f2aa9103.7.azurestaticapps.net
+
+It deploys automatically: every push to the `main` branch on GitHub updates the
+live site through a GitHub Actions workflow.
+
 ## How to open the website (Live Server)
 1. Open the project folder in **VS Code**.
 2. Install the **Live Server** extension (if you have not already).

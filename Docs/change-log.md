@@ -4,6 +4,21 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-24 (published on Azure)
+**Files changed:**
+- Added `index.html` in the project root (redirects to `Codes/personal-site.html`).
+- Azure added a GitHub Actions workflow under `.github/workflows/`.
+
+**What was changed:**
+- Published the website on **Azure Static Web Apps** (free tier).
+- Live URL: https://brave-bay-0f2aa9103.7.azurestaticapps.net
+- Set up automatic deployment: every push to `main` updates the live site.
+
+**Why it was changed:**
+- To put the website online on Azure with automatic deploys.
+
+---
+
 ## 2026-06-24 (removed My journey timeline)
 **Files changed:**
 - `Codes/personal-site.html`
