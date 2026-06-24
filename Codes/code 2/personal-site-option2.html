@@ -615,7 +615,6 @@
 
       if (newPath !== activePath) {
         activePath = newPath;
-        history.replaceState({}, '', newPath + (window.location.hash || ''));
         updateActiveNavLink(newPath);
       }
     }
