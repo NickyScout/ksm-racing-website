@@ -889,38 +889,56 @@ figcaption {
 
 .contact-container {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 56px;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 34px;
   align-items: start;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .contact-info {
-  color: #e8e8e8;
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #f0f0f0;
+  background: linear-gradient(165deg, rgba(21, 21, 21, 0.95), rgba(12, 12, 12, 0.95));
+  border: 1px solid rgba(225, 6, 0, 0.26);
+  border-top: 4px solid #e10600;
   border-radius: 18px;
-  padding: 30px;
+  padding: 34px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
 }
 
 .contact-info p {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 22px;
+  font-size: 17px;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.contact-points {
+  margin: 0 0 18px 18px;
+  padding: 0;
+}
+
+.contact-points li {
+  margin-bottom: 9px;
+  color: #dbdbdb;
+  line-height: 1.45;
 }
 
 .email-link {
   display: inline-block;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
   color: #e10600;
   text-decoration: none;
-  margin-bottom: 28px;
+  margin-bottom: 12px;
   border-bottom: 2px solid #e10600;
   padding-bottom: 6px;
   transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-note {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: #bcbcbc;
 }
 
 .email-link:hover {
@@ -936,7 +954,7 @@ figcaption {
 
 .contact-social p {
   margin-bottom: 14px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .contact-form {
@@ -1011,6 +1029,10 @@ figcaption {
 }
 
 @media (max-width: 600px) {
+  .contact-points {
+    margin-left: 16px;
+  }
+
   .contact-info,
   .events-grid,
   .contact-form {
