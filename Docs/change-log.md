@@ -4,6 +4,21 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-24 (About Me: simple words, formal style)
+**Files changed:**
+- `Codes/personal-site.html`
+
+**What was changed:**
+- Reworded About Me to use simple, everyday words but keep a formal style (no slang,
+  no contractions). The quote was simplified to "My goal is to get a little faster
+  every time I race."
+
+**Why it was changed:**
+- The previous version used overly fancy words; the goal is simple wording with a
+  formal tone.
+
+---
+
 ## 2026-06-24 (About Me made formal)
 **Files changed:**
 - `Codes/personal-site.html`
