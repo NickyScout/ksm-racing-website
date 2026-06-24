@@ -4,6 +4,20 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-24 (stats moved back)
+**Files changed:**
+- `Codes/personal-site.html`
+- `Codes/personal-style.css`
+
+**What was changed:**
+- Reverted the stats band. The stats (31.8s, 4+, Top 5) are back in their original
+  place near the bottom of the Tracks section.
+
+**Why it was changed:**
+- The stats band under the hero was not wanted.
+
+---
+
 ## 2026-06-24 (stats moved to the top)
 **Files changed:**
 - `Codes/personal-site.html`
