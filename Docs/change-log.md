@@ -4,6 +4,19 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-24 (About Me tone balanced)
+**Files changed:**
+- `Codes/personal-site.html`
+
+**What was changed:**
+- Adjusted the About Me wording so it is natural but not too informal, especially
+  the "Off the track" part. Kept it genuine and professional for teams and sponsors.
+
+**Why it was changed:**
+- The previous rewrite was too casual.
+
+---
+
 ## 2026-06-24 (About Me wording made more natural)
 **Files changed:**
 - `Codes/personal-site.html`
