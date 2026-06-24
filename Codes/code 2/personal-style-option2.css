@@ -272,10 +272,57 @@ h1 {
 .story-section,
 .driver-section,
 .tracks-section,
+.events-section,
 .gallery-section,
 .sponsor-section,
 .contact-section {
   padding: 90px 8%;
+}
+
+.events-section {
+  background:
+    linear-gradient(135deg, #0f0f0f, #1e0202 60%, #101010);
+  color: #ffffff;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.event-card {
+  border-radius: 20px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(225, 6, 0, 0.55);
+}
+
+.event-meta {
+  margin: 0 0 8px;
+  color: #ff7b7b;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.event-card h3 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.event-card p {
+  margin: 0;
+  color: #efefef;
+  line-height: 1.5;
 }
 
 .tracks-section {
@@ -958,6 +1005,7 @@ figcaption {
 
 @media (max-width: 600px) {
   .contact-info,
+  .events-grid,
   .contact-form {
     padding: 22px;
   }
@@ -1070,6 +1118,7 @@ footer {
   .hero,
   .story-section,
   .driver-section,
+  .events-section,
   .tracks-section,
   .gallery-section,
   .sponsor-section {
