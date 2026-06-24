@@ -21,17 +21,16 @@
 
   <header class="hero">
     <nav class="navbar">
-      <a class="logo" href="#top" aria-label="Back to top">
+      <a class="logo" href="/" aria-label="Back to top">
         <img src="Images - Copy/logo.png" alt="KSM Racing logo">
       </a>
 
       <div class="nav-links">
-        <a href="#story">Story</a>
-        <a href="#driver">Driver</a>
-        <a href="#events">Events</a>
-        <a href="#tracks">Tracks</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#sponsors">Sponsors</a>
+        <a href="/about">About</a>
+        <a href="/calendar">Calendar</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/sponsorship">Sponsorship</a>
+        <a href="/contact">Contact</a>
       </div>
     </nav>
 
@@ -46,12 +45,12 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#story" class="btn btn-red">Read my story</a>
-          <a href="#sponsors" class="btn btn-outline">Sponsor info</a>
-          <a href="#events" class="btn btn-outline">Upcoming events</a>
+          <a href="/about" class="btn btn-red">Read my story</a>
+          <a href="/sponsorship" class="btn btn-outline">Sponsor info</a>
+          <a href="/calendar" class="btn btn-outline">Upcoming events</a>
         </div>
 
-        <a href="#stats" class="stats-scroll-hint" aria-label="Jump to key stats">
+        <a href="/results" class="stats-scroll-hint" aria-label="Jump to key stats">
           See key stats
         </a>
 
@@ -518,26 +517,81 @@
       }
     });
 
-    // Sticky navigation active link highlighting
+    // Path-based SPA routing
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section[id]');
 
+    const pathToSection = {
+      '/about':       'story',
+      '/results':     'stats',
+      '/calendar':    'events',
+      '/gallery':     'gallery',
+      '/sponsorship': 'sponsors',
+      '/contact':     'contact',
+      '/media-kit':   'sponsors',
+    };
+
+    const sectionToPath = {
+      'story':   '/about',
+      'driver':  '/about',
+      'stats':   '/results',
+      'events':  '/calendar',
+      'tracks':  '/calendar',
+      'gallery': '/gallery',
+      'sponsors':'/sponsorship',
+      'contact': '/contact',
+    };
+
+    function updateActiveNavLink(path) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === path);
+      });
+    }
+
+    // On load: scroll to section matching current path
+    const initPath = window.location.pathname.replace(/\/$/, '') || '/';
+    const initSectionId = pathToSection[initPath];
+    if (initSectionId) {
+      const initEl = document.getElementById(initSectionId);
+      if (initEl) { setTimeout(() => initEl.scrollIntoView({ behavior: 'smooth' }), 120); }
+    }
+    updateActiveNavLink(initPath);
+
+    // Intercept internal path link clicks for smooth in-page navigation
+    let activePath = initPath;
+    document.querySelectorAll('a[href^="/"]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === '/' || pathToSection[href] !== undefined) {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          activePath = href;
+          history.pushState({}, '', href);
+          const sid = pathToSection[href];
+          if (sid) {
+            document.getElementById(sid)?.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+          updateActiveNavLink(href);
+        });
+      }
+    });
+
+    // On scroll: update URL and active nav link
     window.addEventListener('scroll', () => {
       let currentSection = '';
-
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-        if (window.scrollY >= sectionTop) {
+        if (window.scrollY >= section.offsetTop - 150) {
           currentSection = section.getAttribute('id');
         }
       });
 
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + currentSection) {
-          link.classList.add('active');
-        }
-      });
+      const newPath = sectionToPath[currentSection] || '/';
+      if (newPath !== activePath) {
+        activePath = newPath;
+        history.replaceState({}, '', newPath);
+        updateActiveNavLink(newPath);
+      }
     });
 
     // Hide past events automatically based on data-event-date (YYYY-MM-DD)
