@@ -3,138 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sponsorship | KSM Racing</title>
+  <title>Sponsorship Packages | KSM Racing</title>
   <style>
+    :root { --red: #e10600; --red-soft: #ff2b2b; }
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: #f4f4f4;
-      background: radial-gradient(circle at 15% 15%, rgba(225, 6, 0, 0.2), transparent 35%), #090909;
+      background: radial-gradient(circle at 15% 15%, rgba(225,6,0,0.18), transparent 38%), #090909;
     }
-
-    .page {
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 48px 7% 64px;
-    }
-
+    .page { max-width: 1060px; margin: 0 auto; padding: 52px 7% 80px; }
     .top-link {
-      display: inline-block;
-      text-decoration: none;
-      color: #ffd2d2;
-      border: 1px solid rgba(225, 6, 0, 0.5);
-      border-radius: 999px;
-      padding: 8px 14px;
-      margin-bottom: 24px;
+      display: inline-block; text-decoration: none; color: #ffd2d2;
+      border: 1px solid rgba(225,6,0,0.5); border-radius: 999px;
+      padding: 8px 14px; margin-bottom: 32px; font-size: 14px;
+      transition: background 0.2s;
     }
+    .top-link:hover { background: rgba(225,6,0,0.15); }
+    h1 { font-size: 52px; margin: 0 0 14px; text-transform: uppercase; line-height: 0.95; }
+    .lead { max-width: 780px; font-size: 19px; line-height: 1.6; color: #e0e0e0; margin-bottom: 40px; }
 
-    h1 {
-      font-size: 48px;
-      margin: 0 0 16px;
-      text-transform: uppercase;
-      line-height: 0.95;
+    /* Packages */
+    .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 48px; }
+    .pkg {
+      border-radius: 18px; padding: 26px 22px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.14);
+      display: flex; flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
     }
-
-    .lead {
-      max-width: 760px;
-      font-size: 19px;
-      line-height: 1.6;
-      color: #e6e6e6;
-      margin-bottom: 30px;
+    .pkg:hover { transform: translateY(-5px); border-color: rgba(225,6,0,0.5); }
+    .pkg.featured {
+      border-color: var(--red);
+      background: linear-gradient(145deg, rgba(225,6,0,0.16), rgba(255,255,255,0.04));
     }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 26px;
+    .pkg-label {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+      color: var(--red-soft); font-weight: bold; margin-bottom: 6px;
     }
-
-    .card {
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-top: 4px solid #e10600;
-      border-radius: 14px;
-      padding: 18px;
+    .pkg h2 { font-size: 26px; margin: 0 0 6px; }
+    .pkg .good-for { font-size: 13px; color: #aaa; margin: 0 0 18px; }
+    .pkg ul { list-style: none; padding: 0; margin: 0 0 24px; flex: 1; }
+    .pkg ul li {
+      padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 15px; line-height: 1.4;
     }
+    .pkg ul li:last-child { border-bottom: none; }
+    .pkg ul li::before { content: "✓ "; color: var(--red-soft); font-weight: bold; }
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 20px;
+    /* What you get detail */
+    .detail-section { margin-bottom: 48px; }
+    .detail-section h2 { font-size: 30px; margin: 0 0 20px; }
+    .detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .detail-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+      border-top: 3px solid var(--red); border-radius: 12px; padding: 18px;
     }
+    .detail-card h3 { margin: 0 0 8px; font-size: 17px; }
+    .detail-card p { margin: 0; color: #ccc; font-size: 14px; line-height: 1.5; }
 
-    .card p {
-      margin: 0;
-      color: #dddddd;
-      line-height: 1.55;
-      font-size: 15px;
+    /* CTA */
+    .cta-block {
+      background: linear-gradient(120deg, rgba(225,6,0,0.18), rgba(255,255,255,0.04));
+      border: 1px solid rgba(225,6,0,0.35); border-radius: 18px;
+      padding: 36px 30px; text-align: center;
     }
-
-    .cta {
-      margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
+    .cta-block h2 { font-size: 32px; margin: 0 0 10px; }
+    .cta-block p { color: #ccc; margin: 0 0 24px; font-size: 16px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
     .btn {
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 999px;
-      padding: 12px 18px;
-      display: inline-block;
+      text-decoration: none; font-weight: bold; border-radius: 999px;
+      padding: 13px 22px; display: inline-block;
+      transition: transform 0.2s, background 0.2s;
     }
-
-    .btn-red {
-      background-color: #e10600;
-      color: #fff;
-    }
-
-    .btn-outline {
-      border: 2px solid #fff;
-      color: #fff;
-    }
+    .btn:hover { transform: scale(1.05); }
+    .btn-red { background: var(--red); color: #fff; box-shadow: 0 6px 18px rgba(225,6,0,0.3); }
+    .btn-red:hover { background: var(--red-soft); }
+    .btn-outline { border: 2px solid #fff; color: #fff; }
+    .btn-outline:hover { background: #fff; color: #111; }
 
     @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 38px;
-      }
+      .packages, .detail-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 38px; }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <a class="top-link" href="personal-site-option2.html#sponsors">Back to main site</a>
-    <h1>Sponsorship Opportunities</h1>
+    <a class="top-link" href="/">&larr; Back to main site</a>
+
+    <h1>Sponsorship Packages</h1>
     <p class="lead">
-      I am actively seeking sponsors who want to support a young driver focused on long-term growth,
-      race craft and consistency in both indoor and outdoor karting.
+      Supporting a young driver at the beginning of their journey puts your brand in a story that grows.
+      Every package comes with real, trackable deliverables — not vague promises.
+      Choose the level that fits your goals.
     </p>
 
-    <section class="grid">
-      <article class="card">
-        <h3>Brand Visibility</h3>
-        <p>Your brand can be featured across race-related posts, photography, and progress updates.</p>
-      </article>
-      <article class="card">
-        <h3>Professional Content</h3>
-        <p>High-quality karting photos are available for social media and digital sponsor content.</p>
-      </article>
-      <article class="card">
-        <h3>Clear Progress Journey</h3>
-        <p>Regular development updates with transparent goals, race results and training milestones.</p>
-      </article>
-    </section>
+    <div class="packages">
 
-    <div class="cta">
-      <a class="btn btn-red" href="personal-site-option2.html#contact">Contact for sponsorship</a>
-      <a class="btn btn-outline" href="team-info.html">View team and collaboration info</a>
+      <div class="pkg">
+        <p class="pkg-label">Entry level</p>
+        <h2>Supporter</h2>
+        <p class="good-for">Good for: local businesses and individuals</p>
+        <ul>
+          <li>Logo on KSM Racing website</li>
+          <li>Thank-you post on social media</li>
+          <li>Monthly progress mention with your brand tagged</li>
+          <li>Name in race event captions</li>
+        </ul>
+      </div>
+
+      <div class="pkg">
+        <p class="pkg-label">Mid-tier</p>
+        <h2>Race Partner</h2>
+        <p class="good-for">Good for: small brands and growing businesses</p>
+        <ul>
+          <li>Logo on website and race content photos</li>
+          <li>2 dedicated social posts per month featuring your brand</li>
+          <li>Race event updates sent to you after each event</li>
+          <li>Professional karting photography for your use</li>
+          <li>Instagram story coverage from race days</li>
+        </ul>
+      </div>
+
+      <div class="pkg featured">
+        <p class="pkg-label">Top tier</p>
+        <h2>Main Partner</h2>
+        <p class="good-for">Good for: brands wanting consistent, visible exposure</p>
+        <ul>
+          <li>Featured placement on website homepage</li>
+          <li>Logo on clothing and karting content</li>
+          <li>Regular content across Instagram and TikTok</li>
+          <li>Full race reports with brand mentions after every event</li>
+          <li>Dedicated sponsor story post</li>
+          <li>Priority photography access — images cleared for your marketing</li>
+        </ul>
+      </div>
+
     </div>
+
+    <div class="detail-section">
+      <h2>What this actually looks like</h2>
+      <div class="detail-grid">
+        <div class="detail-card">
+          <h3>Professional photography</h3>
+          <p>A photographer is on site at most race events. You receive high-resolution images cleared for use in your own social media, website or advertising.</p>
+        </div>
+        <div class="detail-card">
+          <h3>Social media reach</h3>
+          <p>Posts go out on Instagram and TikTok tied to real race days, not generic content. Your logo or brand name appears in caption, image or both.</p>
+        </div>
+        <div class="detail-card">
+          <h3>Race reports</h3>
+          <p>After every race, a short written update covers results, key moments and progress. Race Partner and Main Partner sponsors are mentioned by name.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-block">
+      <h2>Ready to get involved?</h2>
+      <p>Reach out directly to discuss which package fits your goals. All packages are flexible and can be tailored.</p>
+      <div class="cta">
+        <a class="btn btn-red" href="/contact">Contact for sponsorship</a>
+        <a class="btn btn-outline" href="mailto:miliaevak@outlook.com">miliaevak@outlook.com</a>
+      </div>
+    </div>
+
   </main>
 </body>
 </html>
