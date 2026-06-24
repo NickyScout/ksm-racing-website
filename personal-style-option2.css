@@ -907,25 +907,14 @@ figcaption {
 }
 
 .contact-info p {
-  font-size: 17px;
-  line-height: 1.65;
-  margin-bottom: 18px;
-}
-
-.contact-points {
-  margin: 0 0 18px 18px;
-  padding: 0;
-}
-
-.contact-points li {
-  margin-bottom: 9px;
-  color: #dbdbdb;
+  font-size: 22px;
   line-height: 1.45;
+  margin-bottom: 18px;
 }
 
 .email-link {
   display: inline-block;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   color: #e10600;
   text-decoration: none;
@@ -933,12 +922,6 @@ figcaption {
   border-bottom: 2px solid #e10600;
   padding-bottom: 6px;
   transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-.contact-note {
-  margin: 0 0 20px;
-  font-size: 14px;
-  color: #bcbcbc;
 }
 
 .email-link:hover {
@@ -954,7 +937,7 @@ figcaption {
 
 .contact-social p {
   margin-bottom: 14px;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .contact-form {
@@ -1029,10 +1012,6 @@ figcaption {
 }
 
 @media (max-width: 600px) {
-  .contact-points {
-    margin-left: 16px;
-  }
-
   .contact-info,
   .events-grid,
   .contact-form {
