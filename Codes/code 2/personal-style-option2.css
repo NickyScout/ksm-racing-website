@@ -325,6 +325,13 @@ h1 {
   line-height: 1.5;
 }
 
+.events-note {
+  margin: 14px 2px 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 .tracks-section {
   background-color: #ffffff;
   color: #151515;
