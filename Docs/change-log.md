@@ -4,6 +4,21 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-24 (stats moved to the top)
+**Files changed:**
+- `Codes/personal-site.html`
+- `Codes/personal-style.css`
+
+**What was changed:**
+- Moved the key stats (31.8s best lap, 4+ endurance events, Top 5 finishes) out of
+  the bottom of the Tracks section and into a bold "stats band" right under the hero.
+- The stats are now one of the first things visitors and sponsors see.
+
+**Why it was changed:**
+- The stats were easy to scroll past where they were before.
+
+---
+
 ## 2026-06-24 (My Story made more engaging)
 **Files changed:**
 - `Codes/personal-site.html`
