@@ -1,4 +1,10 @@
 ﻿{
+  "routes": [
+    {
+      "route": "/sponsorship",
+      "rewrite": "/sponsorship.html"
+    }
+  ],
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/Images - Copy/*", "/*.css", "/*.png", "/*.jpg", "/*.jpeg", "/*.gif", "/*.webp", "/*.ico"]
