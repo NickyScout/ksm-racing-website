@@ -196,22 +196,10 @@
       </div>
 
       <div class="events-grid">
-        <article class="event-card">
+        <article class="event-card" data-event-date="2026-06-28">
           <p class="event-meta">28 June 2026 | TeamSport Reading</p>
           <h3>Race Academy Session</h3>
           <p>A focused Academy day at Reading to sharpen race craft, consistency and traffic decisions.</p>
-        </article>
-
-        <article class="event-card">
-          <p class="event-meta">July 2026 | TeamSport High Wycombe</p>
-          <h3>Endurance Team Event</h3>
-          <p>Long stints with team strategy work, communication and pace control across the race.</p>
-        </article>
-
-        <article class="event-card">
-          <p class="event-meta">September 2026 | Silverstone</p>
-          <h3>Outdoor Sprint Session</h3>
-          <p>A sprint-focused day to improve braking references and confidence in high-speed sections.</p>
         </article>
       </div>
 
@@ -551,6 +539,35 @@
         }
       });
     });
+
+    // Hide past events automatically based on data-event-date (YYYY-MM-DD)
+    const eventsSection = document.getElementById("events");
+    const eventCards = Array.from(document.querySelectorAll(".event-card[data-event-date]"));
+
+    if (eventsSection && eventCards.length) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      let visibleEvents = 0;
+
+      eventCards.forEach((card) => {
+        const dateValue = card.getAttribute("data-event-date");
+        const eventDate = dateValue ? new Date(dateValue + "T23:59:59") : null;
+
+        if (!eventDate || Number.isNaN(eventDate.getTime()) || eventDate < today) {
+          card.remove();
+          return;
+        }
+
+        visibleEvents += 1;
+      });
+
+      if (visibleEvents === 0) {
+        const eventsNote = eventsSection.querySelector(".events-note");
+        if (eventsNote) {
+          eventsNote.textContent = "No upcoming events right now. New dates will be added soon.";
+        }
+      }
+    }
 
     // Contact form return URL and in-page success message
     const nextInput = document.getElementById("form-next");
