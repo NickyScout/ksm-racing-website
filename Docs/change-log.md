@@ -4,6 +4,19 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-24 (About Me made formal)
+**Files changed:**
+- `Codes/personal-site.html`
+
+**What was changed:**
+- Reworded the whole About Me section (lead, quote, all four mini-blocks and the
+  five timeline steps) in a more formal tone.
+
+**Why it was changed:**
+- Requested a more formal style throughout the section.
+
+---
+
 ## 2026-06-24 (About Me tone balanced)
 **Files changed:**
 - `Codes/personal-site.html`
