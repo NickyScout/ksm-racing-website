@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sponsorship Packages | KSM Racing</title>
+  <title>Partner with KSM Racing | Sponsorship</title>
   <style>
     :root { --red: #e10600; --red-soft: #ff2b2b; }
     *, *::before, *::after { box-sizing: border-box; }
@@ -22,10 +22,20 @@
     }
     .top-link:hover { background: rgba(225,6,0,0.15); }
     h1 { font-size: 52px; margin: 0 0 14px; text-transform: uppercase; line-height: 0.95; }
-    .lead { max-width: 780px; font-size: 19px; line-height: 1.6; color: #e0e0e0; margin-bottom: 40px; }
-
-    /* Packages */
-    .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 48px; }
+    .lead { max-width: 780px; font-size: 18px; line-height: 1.7; color: #e0e0e0; margin-bottom: 16px; }
+    .early-list {
+      list-style: none; padding: 0 0 0 20px; margin: 0 0 32px;
+      border-left: 4px solid var(--red);
+    }
+    .early-list li { padding: 5px 0; font-size: 16px; color: #ddd; }
+    .early-list li::before { content: "— "; color: var(--red-soft); font-weight: bold; }
+    .highlight-note {
+      margin-bottom: 40px; font-size: 16px;
+      border-left: 4px solid var(--red); padding-left: 16px;
+      color: #ddd; line-height: 1.6;
+    }
+    .section-title { font-size: 30px; margin: 0 0 20px; }
+    .packages { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-bottom: 48px; }
     .pkg {
       border-radius: 18px; padding: 26px 22px;
       background: rgba(255,255,255,0.05);
@@ -38,35 +48,27 @@
       font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
       color: var(--red-soft); font-weight: bold; margin-bottom: 6px;
     }
-    .pkg h2 { font-size: 26px; margin: 0 0 6px; }
-    .pkg .good-for { font-size: 13px; color: #aaa; margin: 0 0 18px; }
-    .pkg ul { list-style: none; padding: 0; margin: 0 0 24px; flex: 1; }
-    .pkg ul li {
-      padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
-      font-size: 15px; line-height: 1.4;
-    }
+    .pkg h2 { font-size: 24px; margin: 0 0 4px; }
+    .pkg .good-for { font-size: 13px; color: #aaa; margin: 0 0 16px; font-style: italic; line-height: 1.4; }
+    .pkg ul { list-style: none; padding: 0; margin: 0; flex: 1; }
+    .pkg ul li { padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 15px; line-height: 1.4; }
     .pkg ul li:last-child { border-bottom: none; }
     .pkg ul li::before { content: "✓ "; color: var(--red-soft); font-weight: bold; }
-
-    /* What you get detail */
-    .detail-section { margin-bottom: 48px; }
-    .detail-section h2 { font-size: 30px; margin: 0 0 20px; }
-    .detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .detail-card {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
-      border-top: 3px solid var(--red); border-radius: 12px; padding: 18px;
+    .gear-note {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-left: 4px solid #888;
+      border-radius: 12px; padding: 18px 22px;
+      margin-bottom: 48px; font-size: 14px; color: #bbb; line-height: 1.6;
     }
-    .detail-card h3 { margin: 0 0 8px; font-size: 17px; }
-    .detail-card p { margin: 0; color: #ccc; font-size: 14px; line-height: 1.5; }
-
-    /* CTA */
+    .gear-note strong { color: #eee; }
     .cta-block {
       background: linear-gradient(120deg, rgba(225,6,0,0.18), rgba(255,255,255,0.04));
       border: 1px solid rgba(225,6,0,0.35); border-radius: 18px;
       padding: 36px 30px; text-align: center;
     }
     .cta-block h2 { font-size: 32px; margin: 0 0 10px; }
-    .cta-block p { color: #ccc; margin: 0 0 24px; font-size: 16px; }
+    .cta-block p { color: #ccc; margin: 0 0 24px; font-size: 16px; line-height: 1.6; }
     .cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
     .btn {
       text-decoration: none; font-weight: bold; border-radius: 999px;
@@ -78,9 +80,8 @@
     .btn-red:hover { background: var(--red-soft); }
     .btn-outline { border: 2px solid #fff; color: #fff; }
     .btn-outline:hover { background: #fff; color: #111; }
-
     @media (max-width: 900px) {
-      .packages, .detail-grid { grid-template-columns: 1fr; }
+      .packages { grid-template-columns: 1fr; }
       h1 { font-size: 38px; }
     }
   </style>
@@ -89,89 +90,110 @@
   <main class="page">
     <a class="top-link" href="/">&larr; Back to main site</a>
 
-    <h1>Sponsorship Packages</h1>
+    <h1>Partner with KSM Racing</h1>
+
     <p class="lead">
-      Supporting a young driver at the beginning of their journey puts your brand in a story that grows.
-      Every package comes with real, trackable deliverables — not vague promises.
-      Choose the level that fits your goals.
+      I am at the beginning of my racing journey and I am looking to build real
+      relationships with local businesses who would like to support a young driver as she grows.
+    </p>
+    <p class="lead">
+      This is not just about putting a logo on a website. I want to create useful, positive
+      content for my supporters through race-day photos, short videos, progress updates and
+      branded posts that local businesses can actually share with their own audience.
     </p>
 
-    <p class="lead" style="font-size:17px; margin-bottom:36px; border-left:4px solid #e10600; padding-left:16px; color:#ddd;">
-      Your support directly funds outdoor karting sessions at tracks like Silverstone and TeamSport venues.
-      More sessions mean more race days, more professional photography and more content — all of which
-      benefit you as a sponsor. The more I race, the more exposure your brand gets.
+    <p class="lead" style="font-size:16px; color:#bbb; margin-bottom:10px;">Early partners can be featured through:</p>
+    <ul class="early-list">
+      <li>Logo placement on my website</li>
+      <li>Logo on race gear or teamwear where event rules allow</li>
+      <li>Branded karting photos and short videos</li>
+      <li>Mentions in race-day updates and race reports</li>
+      <li>Monthly progress posts you can share with your own audience</li>
+      <li>Local business shout-outs across Instagram and TikTok</li>
+      <li>Race reports and sponsor thank-you posts</li>
+    </ul>
+
+    <p class="highlight-note">
+      I am especially interested in working with local businesses who want to support
+      youth sport, women in motorsport, driver development and a positive racing story
+      from the very beginning.
     </p>
+
+    <h2 class="section-title">Partnership options</h2>
 
     <div class="packages">
 
       <div class="pkg">
-        <p class="pkg-label">Entry level</p>
-        <h2>Supporter</h2>
-        <p class="good-for">Good for: local businesses and individuals</p>
+        <p class="pkg-label">Getting started</p>
+        <h2>Starter Supporter</h2>
+        <p class="good-for">Good for a local business that wants to help you get started.</p>
         <ul>
-          <li>Logo on KSM Racing website</li>
-          <li>Dedicated introduction post on Instagram and TikTok</li>
-          <li>Your content reshared to my audience once per month</li>
-          <li>Brand tagged in every race event post</li>
-          <li>Monthly written progress update sent directly to you</li>
-          <li>Personal thank-you message and ongoing communication</li>
+          <li>Logo on website sponsor section</li>
+          <li>Thank-you post on Instagram, TikTok and LinkedIn</li>
+          <li>Mention in race updates throughout the season</li>
+          <li>Logo in selected race-day photos or graphics</li>
+          <li>Monthly progress update you can repost</li>
         </ul>
       </div>
 
       <div class="pkg">
-        <p class="pkg-label">Mid-tier</p>
-        <h2>Race Partner</h2>
-        <p class="good-for">Good for: small brands and growing businesses</p>
+        <p class="pkg-label">Recommended</p>
+        <h2>Gear Partner</h2>
+        <p class="good-for">Probably the strongest early option — your brand goes wherever I go.</p>
         <ul>
-          <li>Logo on website and in race content photos</li>
-          <li>2 dedicated social posts per month featuring your brand</li>
-          <li>Instagram and TikTok story coverage from every race day</li>
-          <li>Full race report with your brand mentioned after each event</li>
-          <li>Professional karting photography cleared for your own use</li>
-          <li>Direct race-day updates and open communication throughout</li>
-          <li>Input on how your brand is featured in content</li>
+          <li>Logo on race hoodie, cap, training top or teamwear</li>
+          <li>Logo on website</li>
+          <li>Thank-you posts during race weekends</li>
+          <li>Branded photos from karting sessions</li>
+          <li>Short video or reel featuring your brand</li>
+          <li>Permission to use selected photos for your own social media</li>
         </ul>
       </div>
 
       <div class="pkg">
-        <p class="pkg-label">Top tier</p>
-        <h2>Main Partner</h2>
-        <p class="good-for">Good for: brands wanting consistent, visible exposure</p>
+        <p class="pkg-label">Per event</p>
+        <h2>Race Day Partner</h2>
+        <p class="good-for">For a business that wants to support one specific event.</p>
         <ul>
-          <li>Featured placement on website homepage</li>
-          <li>Logo on clothing and karting content</li>
-          <li>Regular content across Instagram and TikTok</li>
-          <li>Full race reports with brand mentions after every event</li>
-          <li>Dedicated sponsor story post</li>
-          <li>Priority photography access — images cleared for your marketing</li>
+          <li>"Race day supported by [your business]" across all posts</li>
+          <li>Logo on race-day social graphics</li>
+          <li>Mention before and after the event</li>
+          <li>3&ndash;5 usable photos from the day</li>
+          <li>Short race report mentioning your support</li>
+        </ul>
+      </div>
+
+      <div class="pkg">
+        <p class="pkg-label">Founding partner</p>
+        <h2>Founding Partner</h2>
+        <p class="good-for">For someone who believes in the journey early — and grows alongside it.</p>
+        <ul>
+          <li>Larger logo placement on website</li>
+          <li>Logo on race gear where event rules allow</li>
+          <li>Regular mentions across all updates</li>
+          <li>Branded content throughout the season</li>
+          <li>A dedicated "partner story" post about why you supported me</li>
+          <li>First option to continue as my audience grows</li>
         </ul>
       </div>
 
     </div>
 
-    <div class="detail-section">
-      <h2>What this actually looks like</h2>
-      <div class="detail-grid">
-        <div class="detail-card">
-          <h3>Professional photography</h3>
-          <p>A photographer is on site at most race events. You receive high-resolution images cleared for use in your own social media, website or advertising.</p>
-        </div>
-        <div class="detail-card">
-          <h3>Social media reach</h3>
-          <p>Posts go out on Instagram and TikTok tied to real race days, not generic content. Your logo or brand name appears in caption, image or both.</p>
-        </div>
-        <div class="detail-card">
-          <h3>Race reports</h3>
-          <p>After every race, a short written update covers results, key moments and progress. Race Partner and Main Partner sponsors are mentioned by name.</p>
-        </div>
-      </div>
+    <div class="gear-note">
+      <strong>A note on gear and kart logos:</strong> As a rental driver I do not always
+      control the kart livery. All logo placement is described as:
+      <em>"Logo placement on race gear, teamwear and selected media content where event
+      rules allow."</em> This keeps everything accurate and professional.
     </div>
 
     <div class="cta-block">
-      <h2>Ready to get involved?</h2>
-      <p>Reach out directly to discuss which package fits your goals. All packages are flexible and can be tailored.</p>
+      <h2>Let's discuss a simple starter partnership</h2>
+      <p>
+        All packages are flexible. If none of these fit exactly what you have in mind,
+        get in touch and we can work something out together.
+      </p>
       <div class="cta">
-        <a class="btn btn-red" href="/contact">Contact for sponsorship</a>
+        <a class="btn btn-red" href="/contact">Get in touch</a>
         <a class="btn btn-outline" href="mailto:miliaevak@outlook.com">miliaevak@outlook.com</a>
       </div>
     </div>
