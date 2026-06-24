@@ -556,7 +556,10 @@
     // On load: scroll to section matching current path
     const initPath = window.location.pathname.replace(/\/$/, '') || '/';
     const initSectionId = pathToSection[initPath];
-    if (initSectionId) {
+    const navEntry = performance.getEntriesByType('navigation')[0];
+    const isReload = navEntry && navEntry.type === 'reload';
+
+    if (initSectionId && !isReload && !window.location.hash && window.scrollY < 20) {
       const initEl = document.getElementById(initSectionId);
       if (initEl) { setTimeout(() => initEl.scrollIntoView({ behavior: 'smooth' }), 120); }
     }
