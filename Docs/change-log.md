@@ -4,6 +4,20 @@ A simple dated list of changes. Add a new entry every time the project is edited
 
 ---
 
+## 2026-06-24 (About Me wording made more natural)
+**Files changed:**
+- `Codes/personal-site.html`
+
+**What was changed:**
+- Reworded the About Me / My Story text (lead line, quote, the four mini-blocks and
+  two timeline steps) to sound more natural and less polished/AI-like.
+- Same facts and meaning, just a more genuine, everyday voice.
+
+**Why it was changed:**
+- Some phrasing sounded too AI / a bit cringe.
+
+---
+
 ## 2026-06-24 (stats moved back)
 **Files changed:**
 - `Codes/personal-site.html`
