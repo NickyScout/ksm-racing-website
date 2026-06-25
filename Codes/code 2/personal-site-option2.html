@@ -353,10 +353,13 @@
           </div>
         </div>
 
-        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
+        <form class="contact-form" action="https://formsubmit.co/miliaevak@outlook.com" method="POST" novalidate>
           <p>Partnership, sponsorship and team enquiries are managed with parent/guardian support.</p>
           <input type="hidden" name="_subject" value="New message from KSM Racing website">
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none;">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" id="form-next" name="_next" value="">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none;">
 
           <div class="form-group">
             <label for="name">Name</label>
@@ -382,6 +385,10 @@
 
           <p id="contact-success" class="form-success" hidden>
             Thank you for reaching out. Your message has been received, and I will get back to you as soon as possible.
+          </p>
+
+          <p id="contact-local-warning" class="form-success" hidden>
+            Local file previews cannot submit directly. Your email app will open with a prefilled draft instead.
           </p>
         </form>
       </div>
@@ -699,60 +706,59 @@
       }
     }
 
-    // Contact form submission via Formspree
+    // Contact form submission (FormSubmit on web, mailto fallback for local files)
+    const nextInput = document.getElementById("form-next");
     const successNotice = document.getElementById("contact-success");
+    const localWarning = document.getElementById("contact-local-warning");
     const contactForm = document.querySelector(".contact-form");
+    const params = new URLSearchParams(window.location.search);
 
     if (contactForm) {
-      contactForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
-
-        const name = (document.getElementById("name")?.value || "").trim();
-        const email = (document.getElementById("email")?.value || "").trim();
-        const subject = (document.getElementById("subject")?.value || "").trim();
-        const message = (document.getElementById("message")?.value || "").trim();
-
-        if (!name || !email || !subject || !message) {
-          return;
+      if (window.location.protocol === "file:") {
+        if (localWarning) {
+          localWarning.hidden = false;
         }
 
-        const endpoint = contactForm.getAttribute("action") || "";
-        if (endpoint.includes("your-form-id")) {
-          if (successNotice) {
-            successNotice.textContent = "Form endpoint is not configured yet. Replace your-form-id with your Formspree form ID.";
-            successNotice.hidden = false;
-          }
-          return;
-        }
+        contactForm.addEventListener("submit", (event) => {
+          event.preventDefault();
 
-        const formData = new FormData(contactForm);
+          const name = (document.getElementById("name")?.value || "").trim();
+          const email = (document.getElementById("email")?.value || "").trim();
+          const subject = (document.getElementById("subject")?.value || "").trim();
+          const message = (document.getElementById("message")?.value || "").trim();
 
-        try {
-          const response = await fetch(endpoint, {
-            method: "POST",
-            body: formData,
-            headers: {
-              Accept: "application/json"
-            }
-          });
-
-          if (!response.ok) {
-            throw new Error("Form submit failed");
+          if (!name || !email || !subject || !message) {
+            return;
           }
 
-          contactForm.reset();
+          const body = [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            "",
+            "Message:",
+            message
+          ].join("\n");
 
-          if (successNotice) {
-            successNotice.textContent = "Thank you for reaching out. Your message has been received, and I will get back to you as soon as possible.";
-            successNotice.hidden = false;
-          }
-        } catch (error) {
-          if (successNotice) {
-            successNotice.textContent = "Something went wrong while sending your message. Please email me directly at miliaevak@outlook.com.";
-            successNotice.hidden = false;
-          }
-        }
-      });
+          window.location.href = `mailto:miliaevak@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+      }
+    }
+
+    if (nextInput) {
+      const baseUrl = window.location.href.split("#")[0].split("?")[0];
+      nextInput.value = baseUrl + "?sent=1#contact";
+    }
+
+    if (params.get("sent") === "1" && successNotice) {
+      successNotice.hidden = false;
+
+      if (contactForm) {
+        contactForm.reset();
+      }
+
+      if (window.history.replaceState) {
+        window.history.replaceState({}, document.title, "/#contact");
+      }
     }
 
   </script>
