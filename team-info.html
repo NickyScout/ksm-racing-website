@@ -90,6 +90,28 @@
       padding: 0;
     }
 
+    .goals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .goal-card {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .goal-card h4 {
+      margin: 0 0 8px;
+      color: #ffb4b4;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
     .cta {
       margin-top: 28px;
       display: flex;
@@ -125,13 +147,17 @@
       h1 {
         font-size: 36px;
       }
+
+      .goals-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <div class="top-header">
-      <a class="top-link" href="personal-site-option2.html#sponsors">Back to main site</a>
+      <a class="top-link" href="/#sponsors">Back to main site</a>
       <div class="page-logo-wrap">
         <img class="page-logo" src="Images - Copy/logo-official.png" alt="KSM Racing logo">
       </div>
@@ -175,6 +201,28 @@
     </section>
 
     <section class="block">
+      <h3>2026 and 2027 goals</h3>
+      <div class="goals-grid">
+        <article class="goal-card">
+          <h4>2026</h4>
+          <ul>
+            <li>Build consistent qualifying pace across key tracks</li>
+            <li>Expand outdoor karting race experience</li>
+            <li>Strengthen race management in mixed-pace traffic</li>
+          </ul>
+        </article>
+        <article class="goal-card">
+          <h4>2027</h4>
+          <ul>
+            <li>Step into stronger outdoor championship opportunities</li>
+            <li>Work with a team structure for faster development</li>
+            <li>Deliver steady performance over full race seasons</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
       <h3>What I bring</h3>
       <p>A coachable attitude, reliable preparation, endurance focus and a clear desire to improve after every session.</p>
     </section>
@@ -187,7 +235,7 @@
     </div>
 
     <div class="cta">
-      <a class="btn btn-red" href="/contact">Contact me about team, coaching or development opportunities.</a>
+      <a class="btn btn-red" href="/#contact">Contact me about team, coaching or development opportunities.</a>
     </div>
   </main>
 </body>

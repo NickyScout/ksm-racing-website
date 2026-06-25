@@ -640,6 +640,19 @@ p {
   color: #ffffff;
 }
 
+.coach-feedback p {
+  margin: 0 0 10px;
+  padding-left: 12px;
+  border-left: 3px solid rgba(225, 6, 0, 0.7);
+  color: #f3f3f3;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.coach-feedback p:last-child {
+  margin-bottom: 0;
+}
+
 .coach-feedback ul {
   margin: 0;
   padding-left: 18px;
