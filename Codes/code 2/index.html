@@ -403,6 +403,29 @@
     const prevArrow = document.querySelector(".gallery-arrow-left");
     const nextArrow = document.querySelector(".gallery-arrow-right");
 
+    function updateGalleryArrows() {
+      if (!galleryTrack) {
+        return;
+      }
+
+      const maxScrollLeft = Math.max(0, galleryTrack.scrollWidth - galleryTrack.clientWidth);
+      const noOverflow = maxScrollLeft <= 2;
+      const nearStart = galleryTrack.scrollLeft <= 2;
+      const nearEnd = galleryTrack.scrollLeft >= maxScrollLeft - 2;
+
+      if (prevArrow) {
+        const hidePrev = noOverflow || nearStart;
+        prevArrow.hidden = hidePrev;
+        prevArrow.disabled = hidePrev;
+      }
+
+      if (nextArrow) {
+        const hideNext = noOverflow || nearEnd;
+        nextArrow.hidden = hideNext;
+        nextArrow.disabled = hideNext;
+      }
+    }
+
     function scrollGallery(direction) {
       if (!galleryTrack) {
         return;
@@ -423,6 +446,13 @@
 
     if (nextArrow) {
       nextArrow.addEventListener("click", () => scrollGallery(1));
+    }
+
+    if (galleryTrack) {
+      galleryTrack.addEventListener("scroll", updateGalleryArrows, { passive: true });
+      window.addEventListener("resize", updateGalleryArrows);
+      window.addEventListener("load", updateGalleryArrows);
+      requestAnimationFrame(updateGalleryArrows);
     }
 
     // Gallery lightbox
