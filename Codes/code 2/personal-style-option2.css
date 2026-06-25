@@ -255,6 +255,29 @@ h1 {
   border-color: rgba(225, 6, 0, 0.55);
 }
 
+.driver-stats {
+  margin-top: 36px;
+}
+
+.driver-stats .stats-grid {
+  margin-top: 4px;
+}
+
+.driver-stats .stat-card span {
+  display: block;
+  color: #e10600;
+  font-size: 38px;
+  font-weight: bold;
+  min-height: 42px;
+}
+
+.driver-stats .stat-card p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #efefef;
+}
+
 .stats-band span {
   display: block;
   color: #e10600;
