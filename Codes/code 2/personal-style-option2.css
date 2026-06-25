@@ -861,10 +861,20 @@ figcaption {
   font-size: 30px;
 }
 
-.sponsor-benefits li {
-  font-size: 17px;
-  line-height: 1.5;
-  margin-bottom: 12px;
+.supporter-cards {
+  display: grid;
+  gap: 12px;
+}
+
+.supporter-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  border-left: 4px solid #e10600;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .contact-section {
