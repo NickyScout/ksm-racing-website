@@ -1184,6 +1184,16 @@ footer {
 }
 
 @media (max-width: 600px) {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
   .hero-copy,
   .sponsor-text,
   .contact-form,
@@ -1226,21 +1236,32 @@ footer {
     flex-direction: column;
     gap: 10px;
     align-items: stretch;
+    width: 100%;
+    overflow: hidden;
   }
 
   .hero-actions .btn,
   .sponsor-actions .btn,
-  .cta .btn {
+  .cta .btn,
+  .contact-form .btn {
+    display: block;
+    width: 100%;
+    max-width: 100%;
     margin: 0;
   }
 
   .btn {
-    width: 100%;
     margin-right: 0;
     white-space: normal;
     overflow-wrap: anywhere;
     word-break: break-word;
     text-align: center;
+  }
+
+  .btn:hover,
+  .btn:active,
+  .btn:focus {
+    transform: none;
   }
 
   .navbar {
@@ -1358,11 +1379,17 @@ footer {
 
   .contact-form {
     padding: 22px 18px;
+    overflow: hidden;
+  }
+
+  .form-group {
+    min-width: 0;
   }
 
   .contact-form input,
   .contact-form textarea,
   .contact-form select {
+    display: block;
     font-size: 16px;
     width: 100%;
     max-width: 100%;
