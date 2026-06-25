@@ -14,10 +14,16 @@
       background: radial-gradient(circle at 15% 15%, rgba(225,6,0,0.18), transparent 38%), #090909;
     }
     .page { max-width: 1060px; margin: 0 auto; padding: 52px 7% 80px; }
+    .top-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
     .top-link {
       display: inline-block; text-decoration: none; color: #ffd2d2;
       border: 1px solid rgba(225,6,0,0.5); border-radius: 999px;
-      padding: 8px 14px; margin-bottom: 32px; font-size: 14px;
+      padding: 8px 14px; margin-bottom: 0; font-size: 14px;
       transition: background 0.2s;
     }
     .top-link:hover { background: rgba(225,6,0,0.15); }
@@ -104,12 +110,14 @@
 </head>
 <body>
   <main class="page">
-    <a class="top-link" href="/">Back to main site</a>
+    <div class="top-header">
+      <div class="page-logo-wrap">
+        <img class="page-logo" src="/image.png" alt="KSM Racing logo">
+      </div>
+      <a class="top-link" href="/">Back to main site</a>
+    </div>
 
     <h1>Partner with KSM Racing</h1>
-    <div class="page-logo-wrap">
-      <img class="page-logo" src="/image.png" alt="KSM Racing logo">
-    </div>
 
     <p class="lead">
       I am at the beginning of my racing journey and I am looking to build real
