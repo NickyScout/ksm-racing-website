@@ -1184,6 +1184,16 @@ footer {
 }
 
 @media (max-width: 600px) {
+  #story,
+  #driver,
+  #events,
+  #tracks,
+  #gallery,
+  #sponsors,
+  #contact {
+    scroll-margin-top: 132px;
+  }
+
   .stats-grid,
   .track-grid {
     grid-template-columns: 1fr;
@@ -1203,28 +1213,41 @@ footer {
   }
 
   .navbar {
-    padding: 16px 6%;
-    gap: 8px;
-    align-items: flex-start;
+    padding: 12px 5%;
+    gap: 10px;
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .logo {
-    min-height: 44px;
+    min-height: 0;
+    justify-content: flex-start;
   }
 
   .nav-links {
-    gap: 10px;
+    display: flex;
+    width: 100%;
+    gap: 8px;
     max-width: 100%;
-    padding-bottom: 0;
+    padding: 2px 0 4px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-links a {
-    font-size: 13px;
+    margin-left: 0;
+    font-size: 12px;
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.06);
+    flex: 0 0 auto;
   }
 
   .hero {
     min-height: auto;
-    padding-top: 98px;
+    padding-top: 132px;
   }
 
 
@@ -1245,8 +1268,8 @@ footer {
   }
 
   .hero-copy {
-    padding: 20px 18px 18px;
-    border-radius: 22px;
+    padding: 18px 16px;
+    border-radius: 18px;
   }
 
   .sponsor-text {
@@ -1263,7 +1286,7 @@ footer {
   }
 
   .hero-text {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
   }
 
@@ -1306,6 +1329,12 @@ footer {
     padding: 22px 18px;
   }
 
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    font-size: 16px;
+  }
+
   .driver-stats {
     margin-top: 28px;
   }
@@ -1345,12 +1374,15 @@ footer {
   .gallery-layout {
     gap: 12px;
     padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+  }
+
+  figure {
+    scroll-snap-align: start;
   }
 
   .gallery-arrow {
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
+    display: none;
   }
 
   .gallery-arrow-left {
@@ -1380,8 +1412,8 @@ footer {
   }
 
   .logo img {
-    height: 38px;
-    max-width: 120px;
+    height: 34px;
+    max-width: 112px;
   }
 
   .driver-card h3 {
