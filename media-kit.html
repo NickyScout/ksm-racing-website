@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KSM Racing Media Kit</title>
+  <style>
+    :root {
+      --red: #e10600;
+      --ink: #111111;
+      --muted: #5a5a5a;
+      --soft: #f3f3f3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    .sheet {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 16mm 14mm;
+      background: #ffffff;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--red);
+    }
+
+    .logo {
+      width: 110px;
+      height: auto;
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .title p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      border: 1px solid #d7d7d7;
+      border-radius: 10px;
+      padding: 12px;
+      background: #ffffff;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0 0 8px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin: 0 0 6px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .stat {
+      background: var(--soft);
+      border-radius: 8px;
+      padding: 9px;
+      text-align: center;
+      border: 1px solid #e6e6e6;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 18px;
+      color: var(--red);
+      margin-bottom: 2px;
+    }
+
+    .stat span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .full {
+      margin-top: 12px;
+      border: 1px solid #d7d7d7;
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .contact {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      background: #fff4f4;
+      border: 1px solid #ffd8d8;
+    }
+
+    .contact p {
+      margin: 0;
+    }
+
+    .small {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .sheet {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <section class="top">
+      <div class="title">
+        <h1>KSM Racing Media Kit</h1>
+        <p>Kseniia Miliaeva | June 2026</p>
+      </div>
+      <img class="logo" src="Images - Copy/logo-official.png" alt="KSM Racing logo">
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Driver profile</h2>
+        <p>
+          I am Kseniia Miliaeva, a 15-year-old Advanced Race Academy driver focused on race craft,
+          consistency and long-term development in indoor and outdoor rental karting.
+        </p>
+        <p>
+          I am building a positive youth motorsport story with regular race-day content,
+          branded visuals and audience-friendly updates for partners.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Snapshot</h2>
+        <div class="stats">
+          <div class="stat">
+            <strong>31.8s</strong>
+            <span>Best lap at TeamSport Reading</span>
+          </div>
+          <div class="stat">
+            <strong>4+</strong>
+            <span>Endurance events completed</span>
+          </div>
+          <div class="stat">
+            <strong>Top 5</strong>
+            <span>Consistent race finishes</span>
+          </div>
+          <div class="stat">
+            <strong>ARA</strong>
+            <span>Advanced Race Academy driver</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="full">
+      <h2>Partner value</h2>
+      <ul>
+        <li>Website visibility and social mentions through season updates</li>
+        <li>Race-day photos, short videos and branded content</li>
+        <li>Positive local story tied to youth development and women in motorsport</li>
+        <li>Flexible support options from event-based to long-term partnerships</li>
+      </ul>
+    </section>
+
+    <section class="full">
+      <h2>Current focus</h2>
+      <ul>
+        <li>Cleaner overtaking decisions and better race management</li>
+        <li>Outdoor karting experience and consistency under pressure</li>
+        <li>Steady pace progression through coaching and data-driven practice</li>
+      </ul>
+
+      <div class="contact">
+        <p><strong>Contact:</strong> miliaevak@outlook.com</p>
+        <p><strong>Website:</strong> ksm-racing.com</p>
+      </div>
+
+      <p class="small">
+        As a young driver, all sponsorship, partnership and team enquiries are supported and managed
+        with parent or guardian involvement.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
