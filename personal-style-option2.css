@@ -875,6 +875,12 @@ figcaption {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.4;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.supporter-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 20px rgba(17, 17, 17, 0.15);
 }
 
 .contact-section {
