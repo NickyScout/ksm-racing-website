@@ -353,8 +353,10 @@
           </div>
         </div>
 
-        <form class="contact-form" novalidate>
+        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
           <p>Partnership, sponsorship and team enquiries are managed with parent/guardian support.</p>
+          <input type="hidden" name="_subject" value="New message from KSM Racing website">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none;">
 
           <div class="form-group">
             <label for="name">Name</label>
@@ -379,7 +381,7 @@
           <button type="submit" class="btn btn-red">Send Message</button>
 
           <p id="contact-success" class="form-success" hidden>
-            Your email app has been opened with a prefilled draft. If it did not open, email me directly at miliaevak@outlook.com.
+            Thank you for reaching out. Your message has been received, and I will get back to you as soon as possible.
           </p>
         </form>
       </div>
@@ -697,12 +699,12 @@
       }
     }
 
-    // Contact form submission via prefilled email draft (provider-free)
+    // Contact form submission via Formspree
     const successNotice = document.getElementById("contact-success");
     const contactForm = document.querySelector(".contact-form");
 
     if (contactForm) {
-      contactForm.addEventListener("submit", (event) => {
+      contactForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         const name = (document.getElementById("name")?.value || "").trim();
@@ -714,19 +716,41 @@
           return;
         }
 
-        const body = [
-          `Name: ${name}`,
-          `Email: ${email}`,
-          "",
-          "Message:",
-          message
-        ].join("\n");
+        const endpoint = contactForm.getAttribute("action") || "";
+        if (endpoint.includes("your-form-id")) {
+          if (successNotice) {
+            successNotice.textContent = "Form endpoint is not configured yet. Replace your-form-id with your Formspree form ID.";
+            successNotice.hidden = false;
+          }
+          return;
+        }
 
-        const mailtoUrl = `mailto:miliaevak@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        window.location.href = mailtoUrl;
+        const formData = new FormData(contactForm);
 
-        if (successNotice) {
-          successNotice.hidden = false;
+        try {
+          const response = await fetch(endpoint, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json"
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error("Form submit failed");
+          }
+
+          contactForm.reset();
+
+          if (successNotice) {
+            successNotice.textContent = "Thank you for reaching out. Your message has been received, and I will get back to you as soon as possible.";
+            successNotice.hidden = false;
+          }
+        } catch (error) {
+          if (successNotice) {
+            successNotice.textContent = "Something went wrong while sending your message. Please email me directly at miliaevak@outlook.com.";
+            successNotice.hidden = false;
+          }
         }
       });
     }
