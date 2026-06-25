@@ -400,8 +400,28 @@
 
   <script>
     const galleryTrack = document.getElementById("gallery-track");
+    const galleryShell = document.querySelector(".gallery-shell");
     const prevArrow = document.querySelector(".gallery-arrow-left");
     const nextArrow = document.querySelector(".gallery-arrow-right");
+    let galleryArrowsIdle = false;
+    let galleryArrowHideTimer = null;
+
+    function scheduleGalleryArrowHide() {
+      if (galleryArrowHideTimer) {
+        clearTimeout(galleryArrowHideTimer);
+      }
+
+      galleryArrowHideTimer = setTimeout(() => {
+        galleryArrowsIdle = true;
+        updateGalleryArrows();
+      }, 1000);
+    }
+
+    function wakeGalleryArrows() {
+      galleryArrowsIdle = false;
+      updateGalleryArrows();
+      scheduleGalleryArrowHide();
+    }
 
     function updateGalleryArrows() {
       if (!galleryTrack) {
@@ -412,15 +432,16 @@
       const noOverflow = maxScrollLeft <= 2;
       const nearStart = galleryTrack.scrollLeft <= 2;
       const nearEnd = galleryTrack.scrollLeft >= maxScrollLeft - 2;
+      const hideForIdle = galleryArrowsIdle;
 
       if (prevArrow) {
-        const hidePrev = noOverflow || nearStart;
+        const hidePrev = hideForIdle || noOverflow || nearStart;
         prevArrow.hidden = hidePrev;
         prevArrow.disabled = hidePrev;
       }
 
       if (nextArrow) {
-        const hideNext = noOverflow || nearEnd;
+        const hideNext = hideForIdle || noOverflow || nearEnd;
         nextArrow.hidden = hideNext;
         nextArrow.disabled = hideNext;
       }
@@ -441,18 +462,32 @@
     }
 
     if (prevArrow) {
-      prevArrow.addEventListener("click", () => scrollGallery(-1));
+      prevArrow.addEventListener("click", () => {
+        wakeGalleryArrows();
+        scrollGallery(-1);
+      });
     }
 
     if (nextArrow) {
-      nextArrow.addEventListener("click", () => scrollGallery(1));
+      nextArrow.addEventListener("click", () => {
+        wakeGalleryArrows();
+        scrollGallery(1);
+      });
     }
 
     if (galleryTrack) {
-      galleryTrack.addEventListener("scroll", updateGalleryArrows, { passive: true });
+      galleryTrack.addEventListener("scroll", wakeGalleryArrows, { passive: true });
       window.addEventListener("resize", updateGalleryArrows);
       window.addEventListener("load", updateGalleryArrows);
       requestAnimationFrame(updateGalleryArrows);
+    }
+
+    if (galleryShell) {
+      galleryShell.addEventListener("mousemove", wakeGalleryArrows);
+      galleryShell.addEventListener("touchstart", wakeGalleryArrows, { passive: true });
+      galleryShell.addEventListener("focusin", wakeGalleryArrows);
+      galleryShell.addEventListener("mouseleave", scheduleGalleryArrowHide);
+      scheduleGalleryArrowHide();
     }
 
     // Gallery lightbox
