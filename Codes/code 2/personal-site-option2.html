@@ -385,6 +385,10 @@
           <p id="contact-success" class="form-success" hidden>
             Thank you for reaching out. Your message has been received, and I will get back to you as soon as possible.
           </p>
+
+          <p id="contact-local-warning" class="form-success" hidden>
+            Local file previews cannot submit this form. Open this site through a web server (for example, the live site URL) and try again.
+          </p>
         </form>
       </div>
     </section>
@@ -704,7 +708,20 @@
     // Contact form return URL and in-page success message
     const nextInput = document.getElementById("form-next");
     const successNotice = document.getElementById("contact-success");
+    const localWarning = document.getElementById("contact-local-warning");
     const contactForm = document.querySelector(".contact-form");
+
+    if (window.location.protocol === "file:") {
+      if (localWarning) {
+        localWarning.hidden = false;
+      }
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+        });
+      }
+    }
 
     if (nextInput) {
       const baseUrl = window.location.href.split("#")[0].split("?")[0];
