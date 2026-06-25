@@ -73,11 +73,11 @@
     .btn {
       text-decoration: none; font-weight: bold; border-radius: 999px;
       padding: 13px 22px; display: inline-block;
-      transition: transform 0.2s, background 0.2s;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
-    .btn:hover { transform: scale(1.05); }
+    .btn:hover { transform: scale(1.08); }
     .btn-red { background: var(--red); color: #fff; box-shadow: 0 6px 18px rgba(225,6,0,0.3); }
-    .btn-red:hover { background: var(--red-soft); }
+    .btn-red:hover { background: var(--red-soft); box-shadow: 0 12px 28px rgba(225,6,0,0.5); }
     .btn-outline { border: 2px solid #fff; color: #fff; }
     .btn-outline:hover { background: #fff; color: #111; }
     @media (max-width: 900px) {
